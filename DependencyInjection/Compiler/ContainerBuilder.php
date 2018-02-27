@@ -52,7 +52,7 @@ class ContainerBuilder extends BaseContainerBuilder
             return;
         }
 
-        parent::compile();
+        parent::compile(false);
     }
 
     /**
