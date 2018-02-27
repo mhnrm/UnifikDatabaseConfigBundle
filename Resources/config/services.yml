@@ -3,5 +3,5 @@ parameters:
 
 services:
     unifik_database_config.container_invalidator:
-        class: %unifik_database_config.container_invalidator.class%
+        class: "%unifik_database_config.container_invalidator.class%"
         arguments: [ "@kernel" ]

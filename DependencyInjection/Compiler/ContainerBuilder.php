@@ -48,7 +48,7 @@ class ContainerBuilder extends BaseContainerBuilder
             $this->addDbConfig();
             $this->closeConnection();
         } catch (\PDOException $e) {
-            parent::compile();
+            parent::compile(false);
             return;
         }
 
