@@ -2,9 +2,12 @@ parameters:
     unifik_database_config.container_invalidator.class: Unifik\DatabaseConfigBundle\Lib\ContainerInvalidator
 
 services:
-    Unifik\DatabaseConfigBundle\Command\ContainerInvalidateCommand:
+
+    unifik_database_config.container_invalidator_command:
+        class: Unifik\DatabaseConfigBundle\Command\ContainerInvalidateCommand
         tags:
             - { name: 'console.command', command: 'unifik:container:invalidate' }
+    Unifik\DatabaseConfigBundle\Command\ContainerInvalidateCommand: '@unifik_database_config.container_invalidator_command'
 
     unifik_database_config.container_invalidator:
         class: "%unifik_database_config.container_invalidator.class%"
